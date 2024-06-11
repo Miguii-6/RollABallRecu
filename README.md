@@ -2,7 +2,37 @@
 
 "Roll a Ball" es un proyecto introductorio en Unity que enseña a los desarrolladores principiantes cómo crear un juego simple. En este proyecto, los jugadores controlan una esfera que rueda sobre una superficie recolectando objetos. Y además hay un tutorial paso a para para hacer el Roll a Ball básico, que en cuestión es [Roll a ball](https://learn.unity.com/project/roll-a-ball). En mi proyecto tiene varias modificación que iré explicando a medida que vo haciendo junto al Readme, cada apartado será un script explicando que hace ese script.
 
-## Movimiento.cs
+
+## PlayerController
+Este código gestiona el movimiento y las interacciones de un objeto esférico en un juego desarrollado en Unity, incluyendo la generación de pickups y columnas aleatorias, la actualización de un contador y la detección de colisiones.
+
+### Variables
+
+Aqui presento todas las variables que uso con el jugador.
+
+```C#
+private Rigidbody rb;
+    private float movementX;
+    private float movementY;
+	
+    private int count;
+    public float speed = 0;
+	public TextMeshProUGUI countText;
+	public GameObject winTextObject;
+	public GameObject pickupPrefab;
+	public GameObject ColumnsPrefab;
+
+	public int minPickups = 5; 
+    public int maxPickups = 10; 
+	private float jumpForce = 5.0f;
+    private bool isJumping = false;
+	// variable para el animator, para poder cambiar y obtener sus valores
+	Animator anim;
+
+```
+
+
+## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 
 
