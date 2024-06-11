@@ -170,7 +170,23 @@ void OnTriggerEnter(Collider other)
     }
 }
 ```
+### Función SpawnPickupsRandomly
 
+El método `SpawnPickupsRandomly()` genera pickups aleatoriamente en la escena. Primero, determina un número aleatorio de pickups dentro de un rango especificado. Luego, itera sobre este número y genera posiciones aleatorias dentro de un rango predefinido. Por último, instancia el prefab del pickup en las posiciones generadas.
+
+```C#
+void SpawnPickupsRandomly()
+{
+
+    int numPickupsToSpawn = Random.Range(minPickups, maxPickups + 1);
+    for (int i = 0; i < numPickupsToSpawn; i++)
+    {
+        Vector3 spawnPosition = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(-10f, 10f));
+
+        Instantiate(pickupPrefab, spawnPosition, Quaternion.identity);
+    }
+}
+```
 
 ## Movimiento
 

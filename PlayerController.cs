@@ -193,3 +193,20 @@ void OnTriggerEnter(Collider other)
         speed = speed - 1;
     }
 }
+
+// Método para generar pickups aleatoriamente en la escena
+void SpawnPickupsRandomly()
+{
+    // Genera un número aleatorio de pickups dentro de un rango especificado
+    int numPickupsToSpawn = Random.Range(minPickups, maxPickups + 1);
+
+    // Itera sobre el número de pickups a generar
+    for (int i = 0; i < numPickupsToSpawn; i++)
+    {
+        // Genera una posición aleatoria dentro de un rango especificado
+        Vector3 spawnPosition = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(-10f, 10f));
+
+        // Instancia el prefab del pickup en la posición generada
+        Instantiate(pickupPrefab, spawnPosition, Quaternion.identity);
+    }
+}
