@@ -2,6 +2,9 @@
 
 "Roll a Ball" es un proyecto introductorio en Unity que enseña a los desarrolladores principiantes cómo crear un juego simple. En este proyecto, los jugadores controlan una esfera que rueda sobre una superficie recolectando objetos. Y además hay un tutorial paso a para para hacer el Roll a Ball básico, que en cuestión es [Roll a ball](https://learn.unity.com/project/roll-a-ball). En mi proyecto tiene varias modificación que iré explicando a medida que vo haciendo junto al Readme, cada apartado será un script explicando que hace ese script.
 
+## Como es para el usuario mi Roll a Ball
+
+Sales al iniciar del medio del tablero, donde salen columnas y las monedas que son los cuadraditos pequeños. Te sale un texto arriba a la izquierda que arriba te ponen las que llevas y abajo las que todavia siguen vivas o sin recojer. La bola que es el juegador que controlas con las flechas del teclado, la propia bola va siendo más gorda y se hace delgada para no pasar por las columnas siempre y se dificulte el juego. El juego cuando si el enemigo te da o chocas contra una columna vas más lento y cuando pillas una moneda ganas velocidad. El juego acaba cuando recojes todas las monedas y al saltar puedes sobrepasar al enemigo y te puedes caer si te caes te pone en el centro del tablero lo puedes aprobechar a tu favor.
 
 ## PlayerController
 Este código gestiona el movimiento y las interacciones de un objeto esférico en un juego desarrollado en Unity, incluyendo la generación de pickups y columnas aleatorias, la actualización de un contador y la detección de colisiones.
@@ -355,3 +358,12 @@ public class Rotator : MonoBehaviour
 }
 
 ```
+
+
+
+
+
+### Gameplay en mi juego
+
+Entra al gameplay en este link en [Vimeo](https://vimeo.com/956755978?share=copy) para ver el gameplay. 
+
