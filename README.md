@@ -60,3 +60,20 @@ public class CameraController : MonoBehaviour
 }
 
 ```
+## Rotator
+
+Este script controla la rotación de un objeto en Unity. La rotación se realiza continuamente en cada frame. En este caso la rotación esta asignada a las "monedas" que son los cuadraditos azules.
+
+```C#
+
+public class Rotator : MonoBehaviour
+{
+    
+
+    void Update()
+    {
+        transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);
+    }
+}
+
+```
