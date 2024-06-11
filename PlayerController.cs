@@ -120,3 +120,17 @@ private void FixedUpdate()
         anim.SetBool("isJumping", false);
     }
 }
+
+// Método llamado cuando hay movimiento en el input del jugador
+void OnMove(InputValue movementValue)
+{
+    // Obtiene el vector de movimiento del input
+    Vector2 movementVector = movementValue.Get<Vector2>();
+
+    // Muestra el vector de movimiento en la consola para depuración
+    Debug.Log(movementVector);
+
+    // Asigna los valores de movimiento en X y Y
+    movementX = movementVector.x;
+    movementY = movementVector.y;
+}

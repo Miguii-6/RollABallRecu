@@ -98,6 +98,22 @@ private void FixedUpdate()
 }
 ```
 
+### Función onMove
+
+La función `OnMove()` se activa cuando hay movimiento en el input del jugador. Obtiene el vector de movimiento del input y lo muestra en la consola para depuración. Luego, asigna los valores de movimiento en X e Y a variables correspondientes.
+
+```C#
+void OnMove(InputValue movementValue)
+{
+    Vector2 movementVector = movementValue.Get<Vector2>();
+
+    Debug.Log(movementVector);
+
+    movementX = movementVector.x;
+    movementY = movementVector.y;
+}
+```
+
 ## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 
