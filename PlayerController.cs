@@ -79,3 +79,16 @@ void Start()
     // Desactiva el objeto de texto de victoria
     winTextObject.SetActive(false);
 }
+
+// Cuenta la cantidad de objetos con el tag "PickUp" que quedan en la escena
+int CountPickupsLeft(string tag = "PickUp")
+{
+    // Encuentra todos los objetos en la escena con el tag "PickUp"
+    GameObject[] pickups = GameObject.FindGameObjectsWithTag(tag);
+
+    // Obtiene la cantidad de pickups encontrados
+    int pickupCount = pickups.Length;
+
+    // Retorna la cantidad de pickups
+    return pickupCount;
+}

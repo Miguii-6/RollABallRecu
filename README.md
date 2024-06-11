@@ -61,6 +61,20 @@ void Start()
 }
 ```
 
+### Función CountPickupsLeft
+
+Cuenta la cantidad de objetos con el tag "PickUp" que quedan en la escena
+
+```C#
+
+int CountPickupsLeft(string tag = "PickUp")
+{
+    GameObject[] pickups = GameObject.FindGameObjectsWithTag(tag);
+    int pickupCount = pickups.Length;
+    return pickupCount;
+}
+```
+
 ## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 
