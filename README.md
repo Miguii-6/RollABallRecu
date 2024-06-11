@@ -297,6 +297,17 @@ En el método `Update()`, se actualiza constantemente el destino del enemigo hac
     }
 ```
 
+### Función SpawnEnemy
+
+En el método `SpawnEnemy()`, se instancia un nuevo enemigo en la misma posición que el enemigo actual. Esto permite la generación continua de enemigos en el escenario, manteniendo una posición similar al enemigo actual.
+
+```C#
+ void SpawnEnemy()
+    {
+        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+    }
+```
+
 ## CameraController
 
 Este script controla la cámara en un juego tipo "Roll a Ball". La cámara sigue al jugador manteniendo una distancia constante (desplazamiento) calculada al inicio del juego.

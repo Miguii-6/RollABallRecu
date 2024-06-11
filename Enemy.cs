@@ -58,4 +58,10 @@ public float nearThreshold = 5.0f;
         Debug.Log(target.position); 
     }
 
+     void SpawnEnemy()
+    {
+        // Instantiate a new enemy at the same position as the current one
+        Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+    }
+
 }
