@@ -159,3 +159,37 @@ void OnFire()
     // Muestra un mensaje en la consola cuando se presiona el botón de fuego
     Debug.Log("Fire!");
 }
+
+// Método llamado cuando el objeto entra en colisión con otro objeto
+void OnTriggerEnter(Collider other)
+{
+    // Si el objeto con el que colisiona tiene el tag "PickUp"
+    if (other.gameObject.CompareTag("PickUp"))
+    {
+        // Desactiva el objeto "PickUp"
+        other.gameObject.SetActive(false);
+
+        // Incrementa el contador de pickups
+        count++;
+
+        // Aumenta la velocidad de la bola
+        speed = speed + 1;
+
+        // Actualiza el texto del contador
+        SetCountText();
+    }
+
+    // Si el objeto con el que colisiona tiene el tag "Enemy"
+    if (other.gameObject.CompareTag("Enemy"))
+    {
+        // Disminuye la velocidad de la bola
+        speed = speed - 1;
+    }
+
+    // Si el objeto con el que colisiona tiene el tag "Columns"
+    if (other.gameObject.CompareTag("Columns"))
+    {
+        // Disminuye la velocidad de la bola
+        speed = speed - 1;
+    }
+}

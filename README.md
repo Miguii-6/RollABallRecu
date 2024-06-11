@@ -143,6 +143,34 @@ void OnFire()
 }
 ```
 
+### Función OnTriggerEnter
+
+El método `OnTriggerEnter(Collider other)` se activa cuando el objeto entra en colisión con otro objeto. Si el objeto colisionado tiene el tag "PickUp", se desactiva y se incrementa el contador de pickups. Además, se aumenta la velocidad de la bola y se actualiza el texto del contador. Si el objeto colisionado tiene el tag "Enemy" o "Columns", se reduce la velocidad de la bola.
+
+```C#
+void OnTriggerEnter(Collider other)
+{
+    if (other.gameObject.CompareTag("PickUp"))
+    {
+        other.gameObject.SetActive(false);
+        count++;
+
+        speed = speed + 1;
+
+        SetCountText();
+    }
+
+    if (other.gameObject.CompareTag("Enemy"))
+    {
+        speed = speed - 1;
+    }
+    if (other.gameObject.CompareTag("Columns"))
+    {
+        speed = speed - 1;
+    }
+}
+```
+
 
 ## Movimiento
 
