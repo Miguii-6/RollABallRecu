@@ -132,6 +132,17 @@ void SetCountText()
 }
 ```
 
+### Función onFire
+
+Esta función se encarga de detectar cuando se presiona la barra espaciadora
+
+```C#
+void OnFire()
+{
+    Debug.Log("Fire!");
+}
+```
+
 
 ## Movimiento
 

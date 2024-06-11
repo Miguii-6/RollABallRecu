@@ -150,3 +150,12 @@ void SetCountText()
         winTextObject.SetActive(true);
     }
 }
+
+/*
+ * Este método se encarga de detectar cuando se presiona la barra espaciadora
+ */
+void OnFire()
+{
+    // Muestra un mensaje en la consola cuando se presiona el botón de fuego
+    Debug.Log("Fire!");
+}
