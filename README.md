@@ -75,6 +75,29 @@ int CountPickupsLeft(string tag = "PickUp")
 }
 ```
 
+### Función FixedUpdate
+
+El método `FixedUpdate()` controla la física del juego. Primero, calcula un vector de movimiento basado en las entradas de movimiento en X e Y. Luego, aplica una fuerza al Rigidbody en la dirección del movimiento multiplicada por la velocidad. Si la bola cae por debajo del plano, se reinicia su posición y velocidad. Además, si la bola está cerca del suelo, se asegura de que no esté en un estado de salto, cambiando las variables correspondientes.
+
+```C#
+private void FixedUpdate()
+{
+    Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+    rb.AddForce(movement * speed);
+    if (transform.position.y < -10)
+    {
+        transform.position = new Vector3(0, 0.5f, 0);
+        rb.velocity = Vector3.zero;
+    }
+    if (transform.position.y < 0.5f)
+    {
+        isJumping = false;
+
+        anim.SetBool("isJumping", false);
+    }
+}
+```
+
 ## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 

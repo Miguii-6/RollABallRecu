@@ -92,3 +92,31 @@ int CountPickupsLeft(string tag = "PickUp")
     // Retorna la cantidad de pickups
     return pickupCount;
 }
+
+
+// Se llama a este método a intervalos fijos y se utiliza para la física del juego
+private void FixedUpdate()
+{
+    // Crea un vector de movimiento a partir de los valores de movimiento en X y Y
+    Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+    // Añade una fuerza al Rigidbody en la dirección del movimiento multiplicada por la velocidad
+    rb.AddForce(movement * speed);
+
+    // Si la bola cae por debajo del plano, se reinicia su posición y velocidad
+    if (transform.position.y < -10)
+    {
+        transform.position = new Vector3(0, 0.5f, 0);
+        rb.velocity = Vector3.zero;
+    }
+
+    // Si la bola está cerca del suelo, se asegura que no esté en estado de salto
+    if (transform.position.y < 0.5f)
+    {
+        // Cambia la variable 'isJumping' a falso
+        isJumping = false;
+
+        // Cambia la variable 'isJumping' en el animator a falso
+        anim.SetBool("isJumping", false);
+    }
+}
