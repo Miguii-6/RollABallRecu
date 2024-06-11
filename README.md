@@ -30,3 +30,33 @@ public class TransformFunctions : MonoBehaviour
 }
 ```
 
+## CameraController
+
+Este script controla la cámara en un juego tipo "Roll a Ball". La cámara sigue al jugador manteniendo una distancia constante (desplazamiento) calculada al inicio del juego.
+
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+/*
+ * Este script se encarga de controlar la cámara en un Roll a Ball
+ */
+public class CameraController : MonoBehaviour
+{
+    public GameObject player;
+    
+    private Vector3 offset;
+    void Start()
+    {
+        offset = transform.position - player.transform.position;
+    }
+
+    void LateUpdate()
+    {
+        transform.position = player.transform.position + offset;
+
+        
+    }
+}
+
+```
