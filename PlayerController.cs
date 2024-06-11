@@ -210,3 +210,21 @@ void SpawnPickupsRandomly()
         Instantiate(pickupPrefab, spawnPosition, Quaternion.identity);
     }
 }
+
+// Método para generar columnas aleatoriamente en la escena
+void SpawnColumnsRandomly()
+{
+    // Genera un número aleatorio de columnas dentro de un rango especificado
+    int numColumnsToSpawn = Random.Range(minPickups, maxPickups + 3);
+
+    // Itera sobre el número de columnas a generar
+    for (int i = 0; i < numColumnsToSpawn; i++)
+    {
+        // Genera una posición aleatoria dentro de un rango especificado
+        Vector3 spawnPosition = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(-10f, 10f));
+
+        // Instancia el prefab de la columna en la posición generada
+        Instantiate(ColumnsPrefab, spawnPosition, Quaternion.identity);
+    }
+}
+}

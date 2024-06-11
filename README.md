@@ -188,6 +188,25 @@ void SpawnPickupsRandomly()
 }
 ```
 
+### Función SpawnColumnsRandomly
+
+El método `SpawnColumnsRandomly()` genera columnas aleatoriamente en la escena. Comienza generando un número aleatorio de columnas dentro de un rango especificado. Luego, itera sobre este número y genera posiciones aleatorias dentro de un rango predefinido. Finalmente, instancia el prefab de la columna en las posiciones generadas. Lo mismo que con los `PickUps` pero que ahora con columnas
+
+```C#
+void SpawnColumnsRandomly()
+{
+    int numColumnsToSpawn = Random.Range(minPickups, maxPickups + 3);
+
+    for (int i = 0; i < numColumnsToSpawn; i++)
+    {
+        Vector3 spawnPosition = new Vector3(Random.Range(-10f, 10f), 0.5f, Random.Range(-10f, 10f));
+
+        Instantiate(ColumnsPrefab, spawnPosition, Quaternion.identity);
+    }
+}
+
+```
+
 ## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 
