@@ -30,7 +30,19 @@ private Rigidbody rb;
 	Animator anim;
 
 ```
+### Función onJump
 
+Funcion que buscara el input system cuando se le de a la barra espaciadora
+
+```C#
+void OnJump()
+    {
+		rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+		Debug.Log("Dije Salta!");
+		isJumping = true;
+		anim.SetBool("isJumping", true);
+    }
+```
 
 ## Movimiento
 

@@ -41,4 +41,14 @@ public class PlayerController : MonoBehaviour
 	// variable para el animator, para poder cambiar y obtener sus valores
 	Animator anim;
 
-	
+	void OnJump()
+    {
+		// le damos un impulso hacia arriba
+		rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        // para ver luego en el debug
+		Debug.Log("Dije Salta!");
+		// cambiamos el valor de la variable isJumping  a true
+		isJumping = true;
+		// cambiamos el valor de la variable isJumping en el animator a true
+		anim.SetBool("isJumping", true);
+    }
