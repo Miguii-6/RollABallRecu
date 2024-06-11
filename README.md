@@ -571,6 +571,11 @@ void SpawnColumnsRandomly()
 
 ```
 
+Un ejemplo de las columnas y de las monedas en estas dos imagenes:
+
+![Random1](Multimedia/Random1.png)
+![Random2](Multimedia/Random2.png)
+
 
 ## Movimiento
 
@@ -672,6 +677,10 @@ En el método `SpawnEnemy()`, se instancia un nuevo enemigo en la misma posició
     }
 ```
 
+Si lo dejas pueden salir muchos enemigos:
+
+![Enemy](Multimedia/EnemySpawn.png)
+
 ## CameraController
 
 Este script controla la cámara en un juego tipo "Roll a Ball". La cámara sigue al jugador manteniendo una distancia constante (desplazamiento) calculada al inicio del juego.
@@ -727,15 +736,9 @@ Aquí es donde esta grabado como se deforma la bola y es más grande y vuelve a 
 ![Imagen Animator](Multimedia/Animator.png)
 
 
+Un gif de la bolita haciendose grande
 
-
-### Gameplay en mi juego
-
-Entra al gameplay en este link en [Vimeo](https://vimeo.com/956755978?share=copy) para ver el gameplay. 
-
-
-
-
+![Imagen Animator](Multimedia/Deformandose.gif)
 
 ### Gameplay en mi juego
 
