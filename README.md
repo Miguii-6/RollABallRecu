@@ -44,6 +44,23 @@ void OnJump()
     }
 ```
 
+### Función Start
+
+La función Start() en el controlador del jugador configura la escena al inicio del juego, asignando componentes y variables necesarias. Luego, llama a métodos para generar objetos aleatorios y actualizar la interfaz de usuario. Finalmente, desactiva un objeto de texto de victoria hasta que se cumplan ciertas condiciones para ganar.
+
+```C#
+void Start()
+    rb = GetComponent<Rigidbody>();
+    Debug.Log("Hola, debugueando");
+    anim = GetComponent<Animator>();
+    count = 0;
+    SpawnPickupsRandomly();
+    SpawnColumnsRandomly();
+    SetCountText();
+    winTextObject.SetActive(false);
+}
+```
+
 ## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 

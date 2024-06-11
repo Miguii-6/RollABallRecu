@@ -52,3 +52,30 @@ public class PlayerController : MonoBehaviour
 		// cambiamos el valor de la variable isJumping en el animator a true
 		anim.SetBool("isJumping", true);
     }
+        // Start is called before the first frame update
+void Start()
+{
+    // Obtiene el componente Rigidbody del objeto actual y lo asigna a la variable 'rb'
+    rb = GetComponent<Rigidbody>();
+
+    // Muestra un mensaje en la consola para depuración
+    Debug.Log("Hola, debugueando");
+
+    // Obtiene el componente Animator del objeto actual y lo asigna a la variable 'anim'
+    anim = GetComponent<Animator>();
+
+    // Inicializa la variable 'count' a 0
+    count = 0;
+
+    // Llama al método para generar pickups aleatoriamente en la escena
+    SpawnPickupsRandomly();
+
+    // Llama al método para generar columnas aleatoriamente en la escena
+    SpawnColumnsRandomly();
+
+    // Llama al método para actualizar el texto del contador
+    SetCountText();
+
+    // Desactiva el objeto de texto de victoria
+    winTextObject.SetActive(false);
+}
