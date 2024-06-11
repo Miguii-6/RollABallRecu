@@ -33,4 +33,29 @@ public float nearThreshold = 5.0f;
         InvokeRepeating("SpawnEnemy", 15f, 15f);
     }
 
+    // Update es una función de Unity que se llama una vez por frame.
+    void Update()
+    {
+        // Configura el destino del pathfinder para que sea la posición del target. Esto hará que el objeto se mueva hacia el target.
+        pathfinder.SetDestination(target.position);
+
+        
+        // Calcula la distancia entre el enemigo y el jugador
+        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+
+        // Si la distancia es menor que el umbral, considera que el enemigo está "cerca" del jugador
+        if (distanceToPlayer < nearThreshold)
+        {
+            // Cambia la variable 'IsNear' en el Animator a true
+            anim.SetBool("enemyNear", true);
+        }else
+        {
+            // Cambia la variable 'IsNear' en el Animator a false
+            anim.SetBool("enemyNear", false);
+        }
+        
+        // Imprime la posición del target en la consola de Unity para fines de depuración.
+        Debug.Log(target.position); 
+    }
+
 }

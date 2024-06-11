@@ -274,6 +274,29 @@ En el método `Start()`, se inicializan varios componentes y variables clave par
 
 ```
 
+### Función Update
+
+En el método `Update()`, se actualiza constantemente el destino del enemigo hacia la posición del jugador y se calcula la distancia entre ellos. Si la distancia es menor que un umbral predefinido, se activa una animación indicando que el enemigo está cerca del jugador. Además, se imprime la posición del jugador en la consola de Unity para propósitos de depuración.
+
+```C#
+    void Update()
+    {
+        pathfinder.SetDestination(target.position);
+        
+        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+
+        if (distanceToPlayer < nearThreshold)
+        {
+            anim.SetBool("enemyNear", true);
+        }else
+        {
+            anim.SetBool("enemyNear", false);
+        }
+        
+        Debug.Log(target.position); 
+    }
+```
+
 ## CameraController
 
 Este script controla la cámara en un juego tipo "Roll a Ball". La cámara sigue al jugador manteniendo una distancia constante (desplazamiento) calculada al inicio del juego.
