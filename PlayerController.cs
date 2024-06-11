@@ -134,3 +134,19 @@ void OnMove(InputValue movementValue)
     movementX = movementVector.x;
     movementY = movementVector.y;
 }
+
+// Actualiza el texto del contador y verifica si se ha ganado el juego
+void SetCountText()
+{
+    // Actualiza el texto del contador con el valor actual de 'count'
+    countText.text = "Count: " + count.ToString();
+
+    // Añade al texto la cantidad de pickups que quedan
+    countText.text = countText.text + "\nStillAlive: " + CountPickupsLeft().ToString();
+
+    // Si no quedan pickups, muestra el texto de victoria
+    if (CountPickupsLeft() == 0)
+    {
+        winTextObject.SetActive(true);
+    }
+}

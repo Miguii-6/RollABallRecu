@@ -113,6 +113,25 @@ void OnMove(InputValue movementValue)
     movementY = movementVector.y;
 }
 ```
+### Función SetCountText
+
+La función `SetCountText()` actualiza el texto del contador en la interfaz de usuario con el valor actual de 'count'. Luego, añade la cantidad de pickups restantes al texto. Si no quedan pickups, activa un objeto de texto de victoria en la interfaz de usuario.
+
+```C#
+
+void SetCountText()
+{
+
+    countText.text = "Count: " + count.ToString();
+    countText.text = countText.text + "\nStillAlive: " + CountPickupsLeft().ToString();
+
+    if (CountPickupsLeft() == 0)
+    {
+        winTextObject.SetActive(true);
+    }
+}
+```
+
 
 ## Movimiento
 
