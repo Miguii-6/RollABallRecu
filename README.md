@@ -257,6 +257,23 @@ Aqui presento todas las variables que uso con el enemigo.
     public float nearThreshold = 5.0f;
 ```
 
+### Función Start
+
+En el método `Start()`, se inicializan varios componentes y variables clave para el funcionamiento del enemigo. Primero, se obtiene y asigna el componente `NavMeshAgent`, permitiendo al enemigo navegar por la malla de navegación del escenario. Luego, se adquiere una referencia al componente `Animator`, necesario para controlar las animaciones del enemigo. Después, se busca y asigna la posición del jugador al objeto `target`, para que el enemigo pueda perseguir al jugador. Finalmente, se configura la invocación periódica de la función `SpawnEnemy()`, que genera nuevos enemigos en el escenario cada 15 segundos.
+
+```C#
+    void Start()
+    {
+        pathfinder = GetComponent<NavMeshAgent>();
+        
+        anim = GetComponent<Animator>();
+        target = GameObject.Find("Player").transform;
+
+        InvokeRepeating("SpawnEnemy", 15f, 15f);
+    }
+
+```
+
 ## CameraController
 
 Este script controla la cámara en un juego tipo "Roll a Ball". La cámara sigue al jugador manteniendo una distancia constante (desplazamiento) calculada al inicio del juego.
