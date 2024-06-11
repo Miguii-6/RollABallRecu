@@ -207,6 +207,7 @@ void SpawnColumnsRandomly()
 
 ```
 
+
 ## Movimiento
 
 Este script de Unity controla el movimiento y la rotación de un objeto en función de las teclas de flecha presionadas por el usuario. Utiliza transform.Translate para mover el objeto hacia adelante y hacia atrás, y transform.Rotate para girarlo hacia la izquierda y la derecha. Las velocidades de movimiento y giro son ajustables mediante las variables moveSpeed y turnSpeed, respectivamente. 
@@ -233,6 +234,27 @@ public class TransformFunctions : MonoBehaviour
             transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
     }
 }
+```
+
+## Enemy
+
+La clase `Enemy` en Unity controla el comportamiento de los enemigos en el juego. Utiliza un componente `NavMeshAgent` para permitir que los enemigos se muevan a lo largo de una malla de navegación hacia el jugador, cuya posición se actualiza continuamente. Además, mantiene un umbral de proximidad para detectar cuándo el enemigo está cerca del jugador, activando una animación correspondiente. Además, tiene la capacidad de instanciar nuevos enemigos en intervalos regulares, lo que permite la generación continua de desafíos para el jugador.
+
+### Variables
+
+Aqui presento todas las variables que uso con el enemigo.
+
+
+
+```C#
+    private NavMeshAgent pathfinder;
+    private Transform target;
+    public GameObject enemyPrefab;
+    
+    // animator
+    Animator anim;
+    
+    public float nearThreshold = 5.0f;
 ```
 
 ## CameraController
